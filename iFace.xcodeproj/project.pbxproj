@@ -7,20 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD15A1CD2AF2613900F38C5C /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15A1CC2AF2613900F38C5C /* WelcomeVC.swift */; };
+		DD15A1CF2AF2618000F38C5C /* CButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15A1CE2AF2618000F38C5C /* CButton.swift */; };
+		DD15A1D12AF2752900F38C5C /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15A1D02AF2752900F38C5C /* SignUpVC.swift */; };
+		DD15A1D32AF27C7000F38C5C /* CTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15A1D22AF27C7000F38C5C /* CTextField.swift */; };
+		DD539E892AF2C15900C1D975 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD539E882AF2C15900C1D975 /* LogInVC.swift */; };
+		DD88DA0A2AF3B17B00D49DDF /* WolframAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */; };
+		DD88DA0C2AF3C7D400D49DDF /* BlueBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */; };
+		DDDED2662AF387680069BBC7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDED2652AF387680069BBC7 /* HomeVC.swift */; };
+		DDDED2682AF38C640069BBC7 /* GreenBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDED2672AF38C640069BBC7 /* GreenBubble.swift */; };
 		DDE393E22AF256E9005C201F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE393E12AF256E9005C201F /* AppDelegate.swift */; };
 		DDE393E42AF256E9005C201F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE393E32AF256E9005C201F /* SceneDelegate.swift */; };
-		DDE393E62AF256E9005C201F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE393E52AF256E9005C201F /* ViewController.swift */; };
-		DDE393E92AF256E9005C201F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE393E72AF256E9005C201F /* Main.storyboard */; };
 		DDE393EB2AF256EA005C201F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE393EA2AF256EA005C201F /* Assets.xcassets */; };
 		DDE393EE2AF256EA005C201F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE393EC2AF256EA005C201F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD15A1CC2AF2613900F38C5C /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		DD15A1CE2AF2618000F38C5C /* CButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CButton.swift; sourceTree = "<group>"; };
+		DD15A1D02AF2752900F38C5C /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		DD15A1D22AF27C7000F38C5C /* CTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTextField.swift; sourceTree = "<group>"; };
+		DD539E882AF2C15900C1D975 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAPI.swift; sourceTree = "<group>"; };
+		DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBubble.swift; sourceTree = "<group>"; };
+		DDDED2652AF387680069BBC7 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		DDDED2672AF38C640069BBC7 /* GreenBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBubble.swift; sourceTree = "<group>"; };
 		DDE393DE2AF256E9005C201F /* iFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE393E12AF256E9005C201F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE393E32AF256E9005C201F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDE393E52AF256E9005C201F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DDE393E82AF256E9005C201F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDE393EA2AF256EA005C201F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDE393ED2AF256EA005C201F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDE393EF2AF256EA005C201F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +72,18 @@
 			children = (
 				DDE393E12AF256E9005C201F /* AppDelegate.swift */,
 				DDE393E32AF256E9005C201F /* SceneDelegate.swift */,
-				DDE393E52AF256E9005C201F /* ViewController.swift */,
-				DDE393E72AF256E9005C201F /* Main.storyboard */,
+				DD15A1CE2AF2618000F38C5C /* CButton.swift */,
+				DD15A1D22AF27C7000F38C5C /* CTextField.swift */,
+				DDDED2672AF38C640069BBC7 /* GreenBubble.swift */,
+				DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */,
+				DD15A1CC2AF2613900F38C5C /* WelcomeVC.swift */,
+				DD15A1D02AF2752900F38C5C /* SignUpVC.swift */,
+				DD539E882AF2C15900C1D975 /* LogInVC.swift */,
+				DDDED2652AF387680069BBC7 /* HomeVC.swift */,
 				DDE393EA2AF256EA005C201F /* Assets.xcassets */,
 				DDE393EC2AF256EA005C201F /* LaunchScreen.storyboard */,
 				DDE393EF2AF256EA005C201F /* Info.plist */,
+				DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */,
 			);
 			path = iFace;
 			sourceTree = "<group>";
@@ -127,7 +148,6 @@
 			files = (
 				DDE393EE2AF256EA005C201F /* LaunchScreen.storyboard in Resources */,
 				DDE393EB2AF256EA005C201F /* Assets.xcassets in Resources */,
-				DDE393E92AF256E9005C201F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +158,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDE393E62AF256E9005C201F /* ViewController.swift in Sources */,
+				DD88DA0C2AF3C7D400D49DDF /* BlueBubble.swift in Sources */,
+				DD15A1CD2AF2613900F38C5C /* WelcomeVC.swift in Sources */,
+				DD88DA0A2AF3B17B00D49DDF /* WolframAPI.swift in Sources */,
+				DDDED2682AF38C640069BBC7 /* GreenBubble.swift in Sources */,
+				DDDED2662AF387680069BBC7 /* HomeVC.swift in Sources */,
 				DDE393E22AF256E9005C201F /* AppDelegate.swift in Sources */,
 				DDE393E42AF256E9005C201F /* SceneDelegate.swift in Sources */,
+				DD539E892AF2C15900C1D975 /* LogInVC.swift in Sources */,
+				DD15A1D12AF2752900F38C5C /* SignUpVC.swift in Sources */,
+				DD15A1CF2AF2618000F38C5C /* CButton.swift in Sources */,
+				DD15A1D32AF27C7000F38C5C /* CTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DDE393E72AF256E9005C201F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDE393E82AF256E9005C201F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDE393EC2AF256EA005C201F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -295,9 +315,9 @@
 				DEVELOPMENT_TEAM = 4RUKJ5BRNZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iFace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ChatGPT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,9 +343,9 @@
 				DEVELOPMENT_TEAM = 4RUKJ5BRNZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iFace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ChatGPT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

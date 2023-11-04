@@ -20,9 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.windowScene = windowScene
         let myVC = WelcomeVC()
-        //let navCon = UINavigationController(rootViewController: myVC)
-        let navCon = HomeVC()
+        let navCon = UINavigationController(rootViewController: myVC)
+        
         window?.rootViewController = navCon
+        window?.tintColor = UIColor(named: "ButtonColor")
         
         window?.makeKeyAndVisible()
     }

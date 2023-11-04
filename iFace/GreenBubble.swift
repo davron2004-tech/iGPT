@@ -44,7 +44,7 @@ class GreenBubble: UITableViewCell {
     }
     func configureCellBackground(){
         contentView.addSubview(cellBackground)
-        cellBackground.backgroundColor = .green
+        cellBackground.backgroundColor = UIColor(named: "GreenBubble")
         cellBackground.layer.cornerRadius = 8
         cellBackground.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

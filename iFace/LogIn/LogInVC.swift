@@ -21,13 +21,11 @@ class LogInVC: UIViewController,UITextFieldDelegate {
     var password:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.isEnabled = false
-        nextButton.layer.opacity = 0.5
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
-        view.backgroundColor = UIColor(named: "BackgroundColor")
         configureUI()
+        disableNextButton()
     }
     @objc func nextButtonPressed(){
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
@@ -47,23 +45,19 @@ class LogInVC: UIViewController,UITextFieldDelegate {
     @objc func emailDidChange(_ textField: UITextField) {
         email = emailTextField.text
         if email == ""{
-            nextButton.isEnabled = false
-            nextButton.layer.opacity = 0.5
+            disableNextButton()
         }
         else if email != nil && password != nil{
-            nextButton.isEnabled = true
-            nextButton.layer.opacity = 1.0
+            enableNextButton()
         }
     }
     @objc func passwordDidChange(_ texField: UITextField){
         password = passwordTextField.text
         if email != "" && password != ""{
-            nextButton.isEnabled = true
-            nextButton.layer.opacity = 1.0
+            enableNextButton()
         }
         else{
-            nextButton.isEnabled = false
-            nextButton.layer.opacity = 0.5
+            disableNextButton()
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -74,6 +68,14 @@ class LogInVC: UIViewController,UITextFieldDelegate {
             nextButtonPressed()
         }
         return false
+    }
+    func enableNextButton(){
+        nextButton.isEnabled = true
+        nextButton.layer.opacity = 1.0
+    }
+    func disableNextButton(){
+        nextButton.isEnabled = false
+        nextButton.layer.opacity = 0.5
     }
     func configureUI(){
         configureScrollView()

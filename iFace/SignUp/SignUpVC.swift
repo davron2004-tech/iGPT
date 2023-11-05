@@ -24,14 +24,13 @@ class SignUpVC: UIViewController,UITextFieldDelegate {
     var password2:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.isEnabled = false
-        nextButton.layer.opacity = 0.5
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         emailTextField.delegate = self
         passwordTextField1.delegate = self
         passwordTextField2.delegate = self
         passwordErrorLabel.isHidden = true
-        view.backgroundColor = UIColor(named: "BackgroundColor")
         configureUI()
+        disableNextButton()
     }
     @objc func nextButtonPressed(){
         
@@ -54,38 +53,32 @@ class SignUpVC: UIViewController,UITextFieldDelegate {
         email = emailTextField.text
         
         if email == ""{
-            nextButton.isEnabled = false
-            nextButton.layer.opacity = 0.5
+            disableNextButton()
         }
         else if email != nil && password1 != nil && password2 != nil{
-            nextButton.isEnabled = true
-            nextButton.layer.opacity = 1.0
+            enableNextButton()
         }
     }
     @objc func password1DidChange(_ texField: UITextField){
         password1 = passwordTextField1.text
         if password1 == password2 && email != "" && password1 != "" && password2 != ""{
             passwordErrorLabel.isHidden = true
-            nextButton.isEnabled = true
-            nextButton.layer.opacity = 1.0
+            enableNextButton()
         }
         else{
             passwordErrorLabel.isHidden = false
-            nextButton.isEnabled = false
-            nextButton.layer.opacity = 0.5
+            disableNextButton()
         }
     }
     @objc func password2DidChange(_ texField: UITextField){
         password2 = passwordTextField2.text
         if password1 == password2 && email != "" && password1 != "" && password2 != ""{
             passwordErrorLabel.isHidden = true
-            nextButton.isEnabled = true
-            nextButton.layer.opacity = 1.0
+            enableNextButton()
         }
         else{
             passwordErrorLabel.isHidden = false
-            nextButton.isEnabled = false
-            nextButton.layer.opacity = 0.5
+            disableNextButton()
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -96,6 +89,14 @@ class SignUpVC: UIViewController,UITextFieldDelegate {
             nextButtonPressed()
         }
         return false
+    }
+    func enableNextButton(){
+        nextButton.isEnabled = true
+        nextButton.layer.opacity = 1.0
+    }
+    func disableNextButton(){
+        nextButton.isEnabled = false
+        nextButton.layer.opacity = 0.5
     }
     func configureUI(){
         configureScrollView()

@@ -23,15 +23,10 @@ class WelcomeVC: UIViewController {
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         title = "Home"
-    
-        
-        
         configureUI()
     }
     @objc func showSignUpView(){
-        let signUpVC = SignUpVC()
-        
-        navigationController?.pushViewController(signUpVC, animated: true)
+        navigationController?.pushViewController(SignUpVC(), animated: true)
     }
     @objc func showLogInView(){
         navigationController?.pushViewController(LogInVC(), animated: true)

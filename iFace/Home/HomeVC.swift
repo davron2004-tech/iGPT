@@ -17,7 +17,6 @@ class HomeVC: UIViewController,UITextFieldDelegate {
     var wolfram = WolframAPI()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         retrieveData()
         view.backgroundColor = .systemBackground
         let appearance = UINavigationBarAppearance()
@@ -30,24 +29,7 @@ class HomeVC: UIViewController,UITextFieldDelegate {
         conversationTV.delegate = self
         conversationTV.dataSource = self
         textBar.delegate = self
-        configureConversationTV()
-        configureSendButton()
-        configureTextBar()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
+        configureUI()
     }
     func retrieveData(){
         do{
@@ -57,16 +39,6 @@ class HomeVC: UIViewController,UITextFieldDelegate {
         catch{
             print(error.localizedDescription)
         }
-    }
-    
-    
-    
-    @objc func textDidChange(_ textField: UITextField) {
-        text = textField.text ?? ""
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        fetchResult()
-        return false
     }
     @objc func fetchResult(){
         textBar.text = ""
@@ -91,7 +63,6 @@ class HomeVC: UIViewController,UITextFieldDelegate {
         }else{
             wolfram.getAnswer()
         }
-        
     }
     func addResult(model:ConversationModelEntity){
         conversationList.append(model)
@@ -104,6 +75,18 @@ class HomeVC: UIViewController,UITextFieldDelegate {
         }
         
         
+    }
+    @objc func textDidChange(_ textField: UITextField) {
+        text = textField.text ?? ""
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fetchResult()
+        return false
+    }
+    func configureUI(){
+        configureConversationTV()
+        configureSendButton()
+        configureTextBar()
     }
     func configureConversationTV(){
         view.addSubview(conversationTV)

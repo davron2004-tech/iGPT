@@ -12,12 +12,12 @@ class HomeVC: UIViewController,UITextFieldDelegate {
     let conversationTV = UITableView()
     let sendButton = UIButton()
     let textBar = CTextField(placeHolder: "Text")
-    var conversationList:[ConversationModel] = []
+    var conversationList:[ConversationModelEntity] = []
     var text = ""
     var wolfram = WolframAPI()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         retrieveData()
         view.backgroundColor = .systemBackground
         let appearance = UINavigationBarAppearance()
@@ -52,14 +52,7 @@ class HomeVC: UIViewController,UITextFieldDelegate {
     func retrieveData(){
         do{
             let result = try context.fetch(conversationFetchRequest)
-            for data in result as! [NSManagedObject]{
-                conversationList.append(ConversationModel(
-                    isUser: data.value(forKey: "isUser") as! Bool,
-                    result: data.value(forKey: "text") as! String,
-                    conversationID: data.value(forKey: "id") as! String,
-                    host: data.value(forKey: "host") as! String)
-                )
-            }
+            conversationList = result
         }
         catch{
             print(error.localizedDescription)
@@ -78,15 +71,13 @@ class HomeVC: UIViewController,UITextFieldDelegate {
     @objc func fetchResult(){
         textBar.text = ""
         view.endEditing(true)
-        conversationList.append(ConversationModel(isUser: true, result: text,conversationID: "",host: ""))
-        conversationTV.reloadData()
-        DispatchQueue.main.async {
-            self.conversationTV.scrollToRow(at: IndexPath(row: self.conversationList.count - 1, section: 0), at: .bottom, animated: true)
-        }
-        addData(text: text, isUser: true)
-        var lastElement:ConversationModel?{
+        let object = ConversationModelEntity(context: context)
+        object.text = text
+        object.isUser = true
+        addResult(model: object)
+        var lastElement:ConversationModelEntity?{
             for element in conversationList.reversed(){
-                if element.host != ""{
+                if element.host != nil {
                     return element
                 }
             }
@@ -96,20 +87,22 @@ class HomeVC: UIViewController,UITextFieldDelegate {
         let encodedString = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!.lowercased().replacingOccurrences(of: "%20", with: "+")
         wolfram.text = encodedString
         if let element = lastElement{
-            wolfram.getAnswer(id: element.conversationID,host: element.host)
+            wolfram.getAnswer(id: element.id,host: element.host)
         }else{
             wolfram.getAnswer()
         }
         
     }
-    func addResult(model:ConversationModel){
+    func addResult(model:ConversationModelEntity){
         conversationList.append(model)
+        saveData()
         DispatchQueue.main.async {
             self.conversationTV.reloadData()
         }
         DispatchQueue.main.async {
             self.conversationTV.scrollToRow(at: IndexPath(row: self.conversationList.count - 1, section: 0), at: .bottom, animated: true)
         }
+        
         
     }
     func configureConversationTV(){
@@ -167,14 +160,14 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource{
         if element.isUser{
             let cell = conversationTV.dequeueReusableCell(withIdentifier: "BlueCell") as? BlueBubble
             cell?.selectionStyle = .none
-            cell?.cellText.text = element.result
+            cell?.cellText.text = element.text
             return cell!
             
         }
         else{
             let cell = conversationTV.dequeueReusableCell(withIdentifier: "GreenCell") as? GreenBubble
             cell?.selectionStyle = .none
-            cell?.cellText.text = element.result
+            cell?.cellText.text = element.text
             return cell!
         }
     }
@@ -182,9 +175,4 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource{
     
 }
 
-struct ConversationModel{
-    let isUser:Bool
-    let result:String
-    var conversationID:String
-    var host:String
-}
+

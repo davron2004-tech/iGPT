@@ -107,6 +107,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DDA475322AF820490051B40C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				DD15A1CC2AF2613900F38C5C /* WelcomeVC.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		DDA475332AF820550051B40C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DD15A1D02AF2752900F38C5C /* SignUpVC.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		DDA475342AF820680051B40C /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				DD539E882AF2C15900C1D975 /* LogInVC.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		DDA475352AF820700051B40C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DDDED2652AF387680069BBC7 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DDA475362AF820B40051B40C /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */,
+				DDDED2672AF38C640069BBC7 /* GreenBubble.swift */,
+				DD15A1D22AF27C7000F38C5C /* CTextField.swift */,
+				DD15A1CE2AF2618000F38C5C /* CButton.swift */,
+			);
+			path = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		DDA475372AF820EF0051B40C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */,
+				DDA285AC2AF51F910021E584 /* DataPersistance.swift */,
+				DD59E76E2AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DDE393D52AF256E9005C201F = {
 			isa = PBXGroup;
 			children = (
@@ -128,21 +181,16 @@
 			children = (
 				DDE393E12AF256E9005C201F /* AppDelegate.swift */,
 				DDE393E32AF256E9005C201F /* SceneDelegate.swift */,
-				DD15A1CE2AF2618000F38C5C /* CButton.swift */,
-				DD15A1D22AF27C7000F38C5C /* CTextField.swift */,
-				DDDED2672AF38C640069BBC7 /* GreenBubble.swift */,
-				DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */,
-				DD15A1CC2AF2613900F38C5C /* WelcomeVC.swift */,
-				DD15A1D02AF2752900F38C5C /* SignUpVC.swift */,
-				DD539E882AF2C15900C1D975 /* LogInVC.swift */,
-				DDDED2652AF387680069BBC7 /* HomeVC.swift */,
+				DDA475372AF820EF0051B40C /* Model */,
+				DDA475362AF820B40051B40C /* CustomUIElements */,
+				DDA475322AF820490051B40C /* Welcome */,
+				DDA475332AF820550051B40C /* SignUp */,
+				DDA475342AF820680051B40C /* LogIn */,
+				DDA475352AF820700051B40C /* Home */,
 				DDE393EA2AF256EA005C201F /* Assets.xcassets */,
 				DDE393EC2AF256EA005C201F /* LaunchScreen.storyboard */,
 				DDE393EF2AF256EA005C201F /* Info.plist */,
 				DDA285E52AF529AB0021E584 /* GoogleService-Info.plist */,
-				DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */,
-				DDA285AC2AF51F910021E584 /* DataPersistance.swift */,
-				DD59E76E2AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodeld */,
 			);
 			path = iFace;
 			sourceTree = "<group>";

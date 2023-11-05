@@ -3,7 +3,7 @@
     <entity name="ConversationModelEntity" representedClassName="ConversationModelEntity" syncable="YES" codeGenerationType="class">
         <attribute name="host" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="isUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="isUser" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="text" attributeType="String"/>
     </entity>
 </model>

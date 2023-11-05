@@ -23,7 +23,7 @@ struct WolframAPI{
         guard let url = URL(string: url) else {
             return
         }
-        
+        print(url)
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { (data, response, error) in
             if let e = error{
@@ -41,22 +41,15 @@ struct WolframAPI{
         let decoder = JSONDecoder()
         do{
             let decodedData = try decoder.decode(WolframDataModel.self, from: data)
-            let model = ConversationModel(
-                isUser: false,
-                result: decodedData.result,
-                conversationID: decodedData.conversationID,
-                host:decodedData.host
-            )
+            let model = ConversationModelEntity(context: context)
+            model.text = decodedData.result
+            model.isUser = false
+            model.host = decodedData.host
+            model.id = decodedData.conversationID
             delegate?.addResult(model: model)
-            addData(text: decodedData.result,
-                    isUser: false,
-                    id: decodedData.conversationID,
-                    host: decodedData.host
-            )
         }
         catch{
             getAnswer()
-           
         }
     }
 }

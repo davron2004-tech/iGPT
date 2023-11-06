@@ -40,7 +40,7 @@
 		DD59E7702AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD59E76E2AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodeld */; };
 		DD88DA0A2AF3B17B00D49DDF /* WolframAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */; };
 		DD88DA0C2AF3C7D400D49DDF /* BlueBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */; };
-		DDA285AD2AF51F910021E584 /* DataPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA285AC2AF51F910021E584 /* DataPersistance.swift */; };
+		DDA285AD2AF51F910021E584 /* DataPersistanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA285AC2AF51F910021E584 /* DataPersistanceModel.swift */; };
 		DDA285E62AF529AB0021E584 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDA285E52AF529AB0021E584 /* GoogleService-Info.plist */; };
 		DDDED2662AF387680069BBC7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDED2652AF387680069BBC7 /* HomeVC.swift */; };
 		DDDED2682AF38C640069BBC7 /* GreenBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDED2672AF38C640069BBC7 /* GreenBubble.swift */; };
@@ -59,7 +59,7 @@
 		DD59E76F2AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConversationHistoryModel.xcdatamodel; sourceTree = "<group>"; };
 		DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAPI.swift; sourceTree = "<group>"; };
 		DD88DA0B2AF3C7D400D49DDF /* BlueBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBubble.swift; sourceTree = "<group>"; };
-		DDA285AC2AF51F910021E584 /* DataPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistance.swift; sourceTree = "<group>"; };
+		DDA285AC2AF51F910021E584 /* DataPersistanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceModel.swift; sourceTree = "<group>"; };
 		DDA285E52AF529AB0021E584 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDDED2652AF387680069BBC7 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DDDED2672AF38C640069BBC7 /* GreenBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBubble.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				DD88DA092AF3B17B00D49DDF /* WolframAPI.swift */,
-				DDA285AC2AF51F910021E584 /* DataPersistance.swift */,
+				DDA285AC2AF51F910021E584 /* DataPersistanceModel.swift */,
 				DD59E76E2AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodeld */,
 			);
 			path = Model;
@@ -299,7 +299,7 @@
 			files = (
 				DD88DA0C2AF3C7D400D49DDF /* BlueBubble.swift in Sources */,
 				DD15A1CD2AF2613900F38C5C /* WelcomeVC.swift in Sources */,
-				DDA285AD2AF51F910021E584 /* DataPersistance.swift in Sources */,
+				DDA285AD2AF51F910021E584 /* DataPersistanceModel.swift in Sources */,
 				DD88DA0A2AF3B17B00D49DDF /* WolframAPI.swift in Sources */,
 				DD59E7702AF49E3B00AF22B5 /* ConversationHistoryModel.xcdatamodeld in Sources */,
 				DDDED2682AF38C640069BBC7 /* GreenBubble.swift in Sources */,

@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         window?.windowScene = windowScene
-        let myVC = WelcomeVC()
-        let navCon = UINavigationController(rootViewController: myVC)
+        let navCon = UINavigationController(rootViewController: WelcomeVC())
         
         window?.rootViewController = navCon
         window?.tintColor = UIColor(named: "ButtonColor")

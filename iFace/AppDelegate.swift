@@ -13,6 +13,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "ConversationHistoryModel")
         container.loadPersistentStores { description, error in
@@ -28,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.enableAutoToolbar = false
-        let myVC = WelcomeVC()
-        let navCon = UINavigationController(rootViewController: myVC)
+        let navCon = UINavigationController(rootViewController: WelcomeVC())
         window?.rootViewController = navCon
         
         window?.makeKeyAndVisible()

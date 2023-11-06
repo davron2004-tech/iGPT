@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
-class SignUpVC: UIViewController,UITextFieldDelegate {
+class SignUpVC: UIViewController {
     let scrollView = UIScrollView()
     let stackView = UIStackView()
     let upperView = UIView()
@@ -33,8 +33,6 @@ class SignUpVC: UIViewController,UITextFieldDelegate {
         disableNextButton()
     }
     @objc func nextButtonPressed(){
-        
-        
         Auth.auth().createUser(withEmail: email, password: password1) { authResult, error in
             if let e = error{
                 let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
@@ -81,15 +79,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate {
             disableNextButton()
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
-            // Not found, so remove keyboard.
-            nextButtonPressed()
-        }
-        return false
-    }
+    
     func enableNextButton(){
         nextButton.isEnabled = true
         nextButton.layer.opacity = 1.0
@@ -234,4 +224,15 @@ class SignUpVC: UIViewController,UITextFieldDelegate {
     }
     
     
+}
+extension SignUpVC:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            nextButtonPressed()
+        }
+        return false
+    }
 }

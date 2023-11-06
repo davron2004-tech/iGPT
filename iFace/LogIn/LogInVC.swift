@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
-class LogInVC: UIViewController,UITextFieldDelegate {
+class LogInVC: UIViewController {
     let scrollView = UIScrollView()
     let stackView = UIStackView()
     let upperView = UIView()
@@ -60,15 +60,7 @@ class LogInVC: UIViewController,UITextFieldDelegate {
             disableNextButton()
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
-            // Not found, so remove keyboard.
-            nextButtonPressed()
-        }
-        return false
-    }
+    
     func enableNextButton(){
         nextButton.isEnabled = true
         nextButton.layer.opacity = 1.0
@@ -186,4 +178,15 @@ class LogInVC: UIViewController,UITextFieldDelegate {
     }
     
     
+}
+extension LogInVC:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            nextButtonPressed()
+        }
+        return false
+    }
 }

@@ -12,6 +12,7 @@ struct WolframAPI{
     let apiKey = "L8LG9L-HP77QG26L8"
     var delegate:HomeVC!
     var text:String!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     func getAnswer(id:String? = nil,host:String? = nil){
         var url:String{
             if let safehHost = host, let safeId = id{

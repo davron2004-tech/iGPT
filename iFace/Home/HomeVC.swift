@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-class HomeVC: UIViewController,UITextFieldDelegate {
+class HomeVC: UIViewController {
     var safeArea: UILayoutGuide!
     let conversationTV = UITableView()
     let sendButton = UIButton()
@@ -15,9 +15,10 @@ class HomeVC: UIViewController,UITextFieldDelegate {
     var conversationList:[ConversationModelEntity] = []
     var text = ""
     var wolfram = WolframAPI()
+    let dataPersistanceModel = DataPersistanceModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveData()
+        dataPersistanceModel.retrieveData()
         view.backgroundColor = .systemBackground
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "ButtonColor")!]
@@ -31,19 +32,11 @@ class HomeVC: UIViewController,UITextFieldDelegate {
         textBar.delegate = self
         configureUI()
     }
-    func retrieveData(){
-        do{
-            let result = try context.fetch(conversationFetchRequest)
-            conversationList = result
-        }
-        catch{
-            print(error.localizedDescription)
-        }
-    }
+    
     @objc func fetchResult(){
         textBar.text = ""
         view.endEditing(true)
-        let object = ConversationModelEntity(context: context)
+        let object = ConversationModelEntity(context: dataPersistanceModel.context)
         object.text = text
         object.isUser = true
         addResult(model: object)
@@ -54,7 +47,6 @@ class HomeVC: UIViewController,UITextFieldDelegate {
                 }
             }
             return nil
-            
         }
         let encodedString = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!.lowercased().replacingOccurrences(of: "%20", with: "+")
         wolfram.text = encodedString
@@ -66,23 +58,18 @@ class HomeVC: UIViewController,UITextFieldDelegate {
     }
     func addResult(model:ConversationModelEntity){
         conversationList.append(model)
-        saveData()
+        dataPersistanceModel.saveData()
         DispatchQueue.main.async {
             self.conversationTV.reloadData()
         }
         DispatchQueue.main.async {
             self.conversationTV.scrollToRow(at: IndexPath(row: self.conversationList.count - 1, section: 0), at: .bottom, animated: true)
         }
-        
-        
     }
     @objc func textDidChange(_ textField: UITextField) {
         text = textField.text ?? ""
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        fetchResult()
-        return false
-    }
+    
     func configureUI(){
         configureConversationTV()
         configureSendButton()
@@ -157,5 +144,10 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource{
     
     
 }
-
+extension HomeVC:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fetchResult()
+        return false
+    }
+}
 
